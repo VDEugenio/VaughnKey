@@ -261,10 +261,7 @@ bool wifiConnect() {
 
   Serial.printf("\nWiFi: connected! IP: %s\n", WiFi.localIP().toString().c_str());
 
-  // setInsecure() skips TLS certificate validation.
-  // For a home network door lock this is pragmatic. To use proper cert
-  // pinning instead, replace with: secured_client.setCACert(TELEGRAM_CERTIFICATE_ROOT);
-  secured_client.setInsecure();
+  secured_client.setCACert(TELEGRAM_CERTIFICATE_ROOT);
 
   bot = new UniversalTelegramBot(BOT_TOKEN, secured_client);
   wifiConnected = true;
