@@ -1,9 +1,7 @@
 # DoorLock + Telegram — Retrofit Smart Lock with Telegram Notifications+Control
 
 ## Overview
-A battery-powered retrofit smart lock built on an ESP32 with Telegram integration. The user interacts with the lock by touching a capacitive touch sensor mounted on the door's peephole. The ESP32 stays in deep sleep (~10uA draw) at all times until a touch wakes it. Based on the touch gesture and BLE authentication, it drives a servo to turn the existing deadbolt. After every action, a Telegram notification is sent over WiFi. If BLE authentication fails (e.g., a catsitter without a beacon), the lock sends an interactive Telegram prompt with Yes/No buttons and waits up to 2 minutes for a remote unlock decision.
-
-This is a variant of `tap_detection.ino` — all existing behavior (touch detection, BLE scan, servo control, deep sleep) is preserved, with WiFi + Telegram layered on top.
+A battery-powered retrofit smart lock built on an ESP32 with Telegram integration. The user interacts with the lock by touching a capacitive touch sensor mounted on the door's peephole. The ESP32 stays in deep sleep (~10uA draw) at all times until a touch wakes it. Based on the touch gesture and BLE authentication, it drives a servo to turn the existing deadbolt. After every action, a Telegram notification is sent over WiFi. If BLE authentication fails (e.g., a house-sitter without a beacon), the lock sends an interactive Telegram prompt with Yes/No buttons and waits up to 2 minutes for a remote unlock decision.
 
 ## Hardware
 - **ESP32** — main microcontroller, runs on battery, deep sleep between interactions
